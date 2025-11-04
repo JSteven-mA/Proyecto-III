@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Parser FEN — Recursivo (HTML + CSS + JS)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+    <!-- LEFT panel -->
+    <div class="card">
+        <h1>Parser FEN </h1>
+
+        <label for="fen">FEN</label>
+        <textarea id="fen">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1</textarea>
+
+        <div class="controls">
+            <button id="analyze">Analizar</button>
+            <button class="ghost" id="clear">Limpiar</button>
+        </div>
+
+        <div id="errors" class="errors" role="alert"></div>
+        <div id="ok" class="ok">FEN válida ✅</div>
+
+    </div>
+
+    <!-- RIGHT panel -->
+    <div class="card right">
+        <div id="board" class="board" aria-label="Tablero"></div>
+
+        <div class="info">
+            <div class="field"><strong>Campos parseados</strong></div>
+            <div class="field">Piece placement: <div id="valPlacement" style="margin-top:6px; font-family:monospace"></div></div>
+            <div class="field">Side to move: <div id="valSide" style="margin-top:6px; font-family:monospace"></div></div>
+            <div class="field">Castling ability: <div id="valCast" style="margin-top:6px; font-family:monospace"></div></div>
+            <div class="field">En passant: <div id="valEpp" style="margin-top:6px; font-family:monospace"></div></div>
+            <div class="field">Halfmove clock: <div id="valHalf" style="margin-top:6px; font-family:monospace"></div></div>
+            <div class="field">Fullmove counter: <div id="valFull" style="margin-top:6px; font-family:monospace"></div></div>
+
+            <div id="semanticNotes" class="small" style="margin-top:8px; display:none"></div>
+        </div>
+    </div>
+</div>
+
+<script src="funciones.js"></script>
+</body>
+</html>
+
